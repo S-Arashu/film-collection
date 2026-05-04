@@ -1,1 +1,24 @@
-<p>film-card works!</p>
+<a class="card" [routerLink]="['/film', film().id]">
+  <div class="poster-wrap">
+    <img [src]="film().poster" [alt]="film().title" class="poster" />
+    <button
+      class="fav-btn"
+      [class.active]="film().isFavorite"
+      (click)="onFavoriteClick($event)"
+    >
+      @if (film().isFavorite) {
+        ★
+      } @else {
+        ☆
+      }
+    </button>
+  </div>
+
+  <div class="info">
+    <h3>{{ film().title }}</h3>
+    <p class="meta">
+      {{ film().year }} · {{ film().genre }} · {{ film().duration | duration }}
+    </p>
+    <p class="rating">⭐ {{ film().rating }}</p>
+  </div>
+</a>
