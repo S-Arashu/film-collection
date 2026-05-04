@@ -1,1 +1,17 @@
-<p>header works!</p>
+<header class="app-header">
+  <a routerLink="/" class="logo">🎬 FilmCollection</a>
+
+  <nav>
+    <a
+      routerLink="/"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      Все фильмы
+    </a>
+
+    <a routerLink="/about" routerLinkActive="active"> О нас </a>
+
+    <span class="fav-count"> ★ {{ filmsService.favorites().length }} </span>
+  </nav>
+</header>

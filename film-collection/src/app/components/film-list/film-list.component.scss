@@ -1,0 +1,66 @@
+.film-list-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px 40px;
+}
+
+.search-bar {
+  position: relative;
+  margin-bottom: 10px;
+
+  input {
+    width: 100%;
+    padding: 14px 20px 14px 52px;
+    font-family: var(--font);
+    font-size: 1rem;
+    color: var(--c-text);
+    background: var(--c-bg-card);
+    border: 2px solid var(--c-border);
+    border-radius: 50px;
+    outline: none;
+    box-shadow: var(--shadow-card);
+    transition:
+      border-color var(--transition),
+      box-shadow var(--transition);
+
+    &:focus {
+      border-color: var(--c-primary);
+      box-shadow: 0 0 0 4px rgba(255, 107, 0, 0.12);
+    }
+
+    &::placeholder {
+      color: var(--c-text-muted);
+    }
+  }
+
+  &::before {
+    content: "🔍";
+    position: absolute;
+    left: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1rem;
+    pointer-events: none;
+  }
+}
+
+.count {
+  font-size: 0.85rem;
+  color: var(--c-text-muted);
+  margin-bottom: 20px;
+  padding-left: 4px;
+}
+
+.films-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.no-results {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 60px 20px;
+  font-size: 1.1rem;
+  color: var(--c-text-muted);
+}

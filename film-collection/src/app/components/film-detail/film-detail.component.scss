@@ -1,0 +1,126 @@
+.detail-page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 20px 60px;
+}
+
+.back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 24px;
+  padding: 8px 18px;
+  background: var(--c-bg-light);
+  color: var(--c-primary-dk);
+  border: 1.5px solid var(--c-border);
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition:
+    background var(--transition),
+    border-color var(--transition),
+    transform var(--transition);
+
+  &:hover {
+    background: var(--c-border);
+    border-color: var(--c-secondary);
+    transform: translateX(-3px);
+  }
+}
+
+.hero {
+  display: flex;
+  gap: 36px;
+  align-items: flex-start;
+  margin-bottom: 32px;
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.poster {
+  width: 260px;
+  flex-shrink: 0;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-hover);
+  border: 3px solid var(--c-border);
+
+  @media (max-width: 600px) {
+    width: 200px;
+  }
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-top: 6px;
+
+  h1 {
+    font-size: 1.8rem;
+    color: var(--c-text);
+    line-height: 1.2;
+  }
+
+  .meta {
+    font-size: 0.9rem;
+    color: var(--c-text-muted);
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+
+    span + span::before {
+      content: "·";
+      margin-right: 8px;
+      color: var(--c-border-dk);
+    }
+  }
+
+  p {
+    font-size: 0.95rem;
+    color: var(--c-text-muted);
+  }
+}
+
+.fav-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 24px;
+  margin-top: 8px;
+  background: var(--c-bg-light);
+  color: var(--c-primary);
+  border: 2px solid var(--c-primary);
+  border-radius: 50px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition:
+    background var(--transition),
+    color var(--transition),
+    transform var(--transition);
+
+  &:hover {
+    background: var(--c-primary);
+    color: #fff;
+    transform: scale(1.03);
+  }
+
+  &.active {
+    background: var(--c-primary);
+    color: var(--c-accent);
+    border-color: var(--c-primary);
+  }
+}
+
+.description {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--c-text);
+  padding: 24px;
+  background: var(--c-bg-card);
+  border-radius: var(--radius-md);
+  border: 1.5px solid var(--c-border);
+  box-shadow: var(--shadow-card);
+}

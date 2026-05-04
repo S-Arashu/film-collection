@@ -1,0 +1,74 @@
+.app-header {
+  background: var(--c-bg-header);
+  color: var(--c-text-on-org);
+  padding: 0 20px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 2px solid var(--c-primary);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  height: 64px;
+}
+
+.logo {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--c-accent);
+  letter-spacing: 0.03em;
+  transition: opacity var(--transition);
+
+  &:hover {
+    opacity: 0.85;
+    color: var(--c-accent);
+  }
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+nav a {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 6px 14px;
+  border-radius: 20px;
+  transition:
+    background var(--transition),
+    color var(--transition);
+
+  &:hover {
+    color: #fff;
+    background: rgba(255, 107, 0, 0.25);
+  }
+
+  &.active {
+    color: var(--c-accent);
+    background: rgba(255, 107, 0, 0.2);
+  }
+}
+
+.fav-count {
+  background: var(--c-primary);
+  color: #fff;
+  padding: 5px 14px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-left: 8px;
+  letter-spacing: 0.02em;
+  transition:
+    transform var(--transition),
+    background var(--transition);
+
+  &:hover {
+    background: var(--c-secondary);
+    transform: scale(1.05);
+  }
+}

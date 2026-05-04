@@ -1,6 +1,6 @@
 <a class="card" [routerLink]="['/film', film().id]">
   <div class="poster-wrap">
-    <img [src]="film().poster" [alt]="film().title" class="poster" />
+    <img [src]="film().posterUrl" [alt]="film().title" class="poster" />
     <button
       class="fav-btn"
       [class.active]="film().isFavorite"

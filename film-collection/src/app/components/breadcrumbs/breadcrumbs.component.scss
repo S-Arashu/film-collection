@@ -1,0 +1,29 @@
+.breadcrumbs {
+  padding: 10px 20px;
+  background: var(--c-bg-light);
+  border-bottom: 1px solid var(--c-border);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85rem;
+  flex-wrap: wrap;
+}
+
+a {
+  color: var(--c-primary);
+  font-weight: 500;
+  transition: color var(--transition);
+  &:hover {
+    color: var(--c-primary-dk);
+  }
+}
+
+.sep {
+  color: var(--c-border-dk);
+  user-select: none;
+  font-weight: 300;
+}
+
+.current {
+  color: var(--c-text-muted);
+}
