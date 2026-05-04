@@ -1,10 +1,15 @@
-import { Directive } from '@angular/core';
+import { Directive, ElementRef, inject, afterNextRender } from '@angular/core';
 
 @Directive({
-  selector: '[appAutofocus]'
+  selector: '[appAutofocus]',
+  standalone: true,
 })
 export class AutofocusDirective {
+  private el = inject<ElementRef<HTMLInputElement>>(ElementRef);
 
-  constructor() { }
-
+  constructor() {
+    afterNextRender(() => {
+      this.el.nativeElement.focus();
+    });
+  }
 }
