@@ -1,1 +1,24 @@
-<p>film-list works!</p>
+<div class="film-list-page">
+  <div class="search-bar">
+    <input
+      appAutofocus
+      type="text"
+      [value]="searchQuery()"
+      (input)="searchQuery.set($any($event.target).value)"
+      placeholder="Поиск по названию или жанру..."
+    />
+  </div>
+
+  <p class="count">Найдено: {{ filteredFilms().length }}</p>
+
+  <div class="films-grid">
+    @for (film of filteredFilms(); track film.id) {
+      <app-film-card
+        [film]="film"
+        (favoriteToggled)="onFavoriteToggle($event)"
+      />
+    } @empty {
+      <p class="no-results">Ничего не найдено 🎬</p>
+    }
+  </div>
+</div>
